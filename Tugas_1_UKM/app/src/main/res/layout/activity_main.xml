@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/grey">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_github"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple"
+        >
+
+        <ImageView
+            android:id="@+id/iv_github"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_icon_github"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_top_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_github"
+            android:layout_centerVertical="true"
+            android:text="Github Users"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_setting"
+            android:background="@drawable/all_radius_black"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_top_github"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp">
+        <SearchView
+            android:id="@+id/sv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:closeIcon="@drawable/ic_clear"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search"
+            android:searchHintIcon="@null"
+            android:searchIcon="@null"
+            android:background="@drawable/all_radius_white"/>
+        <LinearLayout
+            android:id="@+id/ll_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sv_search"
+            android:orientation="vertical"
+            >
+
+            <ScrollView
+                android:id="@+id/sc_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/rl_user1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/iv_profil"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/ic_profil"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_namauser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/iv_profil"
+                            android:layout_marginLeft="16dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/tv_namauser"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nezuko Kamado"
+
+                                />
+                            <TextView
+                                android:id="@+id/tv_lokasi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jakarta, Indonesia"
+                                />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_arrow"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_arrow_right"
+                            android:layout_centerVertical="true"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/buka"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/itemlist_user"
+                       />
+
+                    </RelativeLayout>
+                </LinearLayout>
+          </ScrollView>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>
